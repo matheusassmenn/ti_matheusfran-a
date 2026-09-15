@@ -1,0 +1,32 @@
+ex1
+JavaScript
+let visto = false;
+
+ex2
+ === 5 $\rightarrow$ true"5" === 5 $\rightarrow$ false"5" == 5 $\rightarrow$ truetrue === false $\rightarrow$ false
+
+ex3
+document.querySelectorAll(".apoiar").forEach(function(botao) {
+  let apoiado = false; // Declarada dentro do forEach para ser individual de cada cartão
+  botao.addEventListener("click", function() {
+    // ...
+  });
+});
+ex4
+if (apoiado === false) {
+  botao.textContent = "Apoiado";
+} else {
+  botao.textContent = "Apoiar";
+}
+ex5
+HTML
+<div class="cartao">
+  <h2>Ventilador quebrado na Sala 3</h2>
+  <p>O ventilador faz um ruído forte e não gira durante as aulas.</p>
+  <p>Apoios: <span class="contagem">0</span></p>
+  <button class="apoiar">Apoiar</button>
+</div>
+ex6
+O que mudar: Inicializar a variável desse cartão específico com let apoiado = true;.
+
+Por que não serve para os outros: Se apoiado começar como true, o primeiro clique vai cair no bloco else, que diminui a contagem e muda o texto para "Apoiar" — o comportamento esperado para um cartão que já começa apoiado. Nos outros cartões, a variável precisa iniciar em false porque eles começam desapoiados (contagem 0), exigindo que o primeiro clique adicione um apoio.
