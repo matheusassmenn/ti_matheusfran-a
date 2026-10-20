@@ -1,0 +1,37 @@
+// ex1
+// Reprovam na régua de 4,5:1 (WCAG AA para texto normal):
+// - #888888 no #FFFFFF (Contraste aprox. 3,5:1 - Reprovado)
+// - #CCCCCC no #FFFFFF (Contraste aprox. 1,6:1 - Reprovado)
+// (Os pares #FFFFFF no #1F4E79 [~8,7:1] e #FFFFFF no #C00000 [~5,9:1] foram aprovados).
+
+// ex2
+// (a) alt="Fila da cantina dobrando o corredor durante o intervalo"
+// (b) alt="Logotipo da Escola - Página Inicial"
+// (c) alt=""
+
+// ex3
+// Motivo: A alteração depende exclusivamente da cor para comunicar o estado da ação, deixando leitores de tela e pessoas com daltonismo ou deficiência visual sem retorno sobre o que aconteceu.
+// Correção:
+botao.addEventListener("click", function() {
+  botao.style.backgroundColor = "green";
+  botao.setAttribute("aria-pressed", "true");
+  botao.textContent = "Salvo com sucesso";
+});
+
+// ex4
+// 1. Adicionado o atributo lang="pt-BR" na tag <html> para indicar o idioma aos leitores de tela.
+// 2. Incluído o atributo alt descritivo em todas as tags <img> do arquivo.
+// 3. Associado cada <label> ao seu respectivo <input> utilizando os atributos 'for' e 'id'.
+
+// ex5
+// Tabela de Auditoria (Acessibilidade / Usabilidade / Desempenho):
+// 1. [Acessibilidade] Falta de atributo alt na imagem principal do header (Reprovado)
+// 2. [Acessibilidade] Texto cinza do rodapé com contraste de 3,1:1 (Reprovado)
+// 3. [Usabilidade] Botão de envio sem estado visual de foco visível (Aviso)
+//
+// Melhorias na ordem de execução:
+// 1ª: Adicionar texto alternativo (alt) na imagem principal do header (Acessibilidade).
+// 2ª: Ajustar a cor do texto do rodapé para atingir a taxa de contraste mínima de 4,5:1 (Acessibilidade).
+// 3ª: Estilizar os estados :focus-visible dos botões e links (Usabilidade/Acessibilidade).
+//
+// Justificativa da ordem: Priorizei primeiro a eliminação das barreiras críticas que impedem o leitor de tela de compreender a página, seguidas da legibilidade visual básica e, por último, os ajustes de navegação por teclado.
